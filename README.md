@@ -1,6 +1,6 @@
 # AIOphpMyAdmin Theme
 
-![AIOphpMyAdmin Theme](https://raw.githubusercontent.com/AIOFrame/phpMyAdmin/blob/master/screen-2x.jpg)
+![AIOphpMyAdmin Theme](https://raw.githubusercontent.com/AIOFrame/phpMyAdmin/main/screen-2x.jpg)
 
 A brilliantly coded AIO (All-In-One) Theme for phpMyAdmin
 
