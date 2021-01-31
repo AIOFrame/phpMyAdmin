@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="33" height="23" viewBox="0 0 33 23">
+  <g id="add_table" transform="translate(-67 -290)">
+    <g id="table" transform="translate(7 -24)">
+      <g id="Rectangle_13" data-name="Rectangle 13" transform="translate(60 314)" fill="none" stroke="#b9b9b9" stroke-width="1">
+        <rect width="27" height="21" rx="4" stroke="none"/>
+        <rect x="0.5" y="0.5" width="26" height="20" rx="3.5" fill="none"/>
+      </g>
+      <line id="Line_7" data-name="Line 7" x2="26" transform="translate(60.5 319.5)" fill="none" stroke="#b9b9b9" stroke-width="1"/>
+      <line id="Line_8" data-name="Line 8" x2="26" transform="translate(60.5 324.5)" fill="none" stroke="#b9b9b9" stroke-width="1"/>
+      <line id="Line_9" data-name="Line 9" x2="26" transform="translate(60.5 329.5)" fill="none" stroke="#b9b9b9" stroke-width="1"/>
+      <line id="Line_10" data-name="Line 10" y2="20" transform="translate(73.5 314.5)" fill="none" stroke="#b9b9b9" stroke-width="1"/>
+    </g>
+    <rect id="Rectangle_17" data-name="Rectangle 17" width="14" height="14" rx="3" transform="translate(86 299)" fill="#b9b9b9"/>
+    <g id="Union_4" data-name="Union 4" transform="translate(89 302)" fill="#fff">
+      <path d="M 7.5 4.5 L 0.5 4.5 L 0.5 3.5 L 7.5 3.5 L 7.5 4.5 Z" stroke="none"/>
+      <path d="M 0 3 L 8 3 L 8 5 L 0 5 L 0 3 Z" stroke="none" fill="#fff"/>
+    </g>
+  </g>
+</svg>

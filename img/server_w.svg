@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 21">
+  <g id="server" transform="translate(-536 -245)">
+    <g id="Rectangle_46" data-name="Rectangle 46" transform="translate(536 245)" fill="none" stroke="#fff" stroke-width="1">
+      <rect width="24" height="7" rx="2" stroke="none"/>
+      <rect x="0.5" y="0.5" width="23" height="6" rx="1.5" fill="none"/>
+    </g>
+    <g id="Rectangle_47" data-name="Rectangle 47" transform="translate(536 252)" fill="none" stroke="#fff" stroke-width="1">
+      <rect width="24" height="7" rx="2" stroke="none"/>
+      <rect x="0.5" y="0.5" width="23" height="6" rx="1.5" fill="none"/>
+    </g>
+    <g id="Rectangle_48" data-name="Rectangle 48" transform="translate(536 259)" fill="none" stroke="#fff" stroke-width="1">
+      <rect width="24" height="7" rx="2" stroke="none"/>
+      <rect x="0.5" y="0.5" width="23" height="6" rx="1.5" fill="none"/>
+    </g>
+    <g id="Rectangle_49" data-name="Rectangle 49" transform="translate(538 248)" fill="none" stroke="#fff" stroke-width="1">
+      <rect width="17" height="1" rx="0.5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="16" fill="none"/>
+    </g>
+    <g id="Rectangle_50" data-name="Rectangle 50" transform="translate(538 255)" fill="none" stroke="#fff" stroke-width="1">
+      <rect width="17" height="1" rx="0.5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="16" fill="none"/>
+    </g>
+    <g id="Rectangle_51" data-name="Rectangle 51" transform="translate(538 262)" fill="none" stroke="#fff" stroke-width="1">
+      <rect width="17" height="1" rx="0.5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="16" fill="none"/>
+    </g>
+    <g id="Ellipse_6" data-name="Ellipse 6" transform="translate(556 248)" fill="none" stroke="#fff" stroke-width="1">
+      <ellipse cx="1" cy="0.5" rx="1" ry="0.5" stroke="none"/>
+      <ellipse cx="1" cy="0.5" rx="0.5" fill="none"/>
+    </g>
+    <g id="Ellipse_7" data-name="Ellipse 7" transform="translate(556 255)" fill="none" stroke="#fff" stroke-width="1">
+      <ellipse cx="1" cy="0.5" rx="1" ry="0.5" stroke="none"/>
+      <ellipse cx="1" cy="0.5" rx="0.5" fill="none"/>
+    </g>
+    <g id="Ellipse_8" data-name="Ellipse 8" transform="translate(556 262)" fill="none" stroke="#fff" stroke-width="1">
+      <ellipse cx="1" cy="0.5" rx="1" ry="0.5" stroke="none"/>
+      <ellipse cx="1" cy="0.5" rx="0.5" fill="none"/>
+    </g>
+  </g>
+</svg>
