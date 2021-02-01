@@ -213,7 +213,7 @@ svg {
 
 table {
     border-collapse: collapse;
-    border-radius:10px;
+    border-radius:5px;
     overflow:hidden;
     margin-bottom: 15px;
     width: 100%;
@@ -293,8 +293,7 @@ input[type=text], input[type=number] {
     font-size: 13px;
     padding:8px;
     border-radius:6px;
-    border:0;
-    background:#DEDEDE;
+    border:1px solid #ddd;
     outline: 0;
 }
 input[type=checkbox], input[type=radio] {
@@ -1315,7 +1314,7 @@ fieldset.tblFooters {
     margin-bottom: 20px;
 }
 fieldset + fieldset.tblFooters {
-    margin-top: -20px;
+    //margin-top: -20px;
 }
 
 fieldset fieldset {
@@ -1331,7 +1330,7 @@ fieldset > legend {
     width: initial;
     font-size: 1rem;
     margin: 0 0 10px;
-    border-radius:10px;
+    border-radius:6px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1426,7 +1425,7 @@ fieldset.tblFooters {
     float: none;
     clear: both;
     background:#00a89c;
-    border-radius: 0 0 10px 10px;
+    border-radius:10px;
     color:#fff;
 }
 
@@ -1900,17 +1899,19 @@ ul.tabs {
     margin: 0;
     padding: 0
 }
-
 ul#topmenu2 {
     display: flex;
     margin-bottom: 20px;
 }
-
+ul#topmenu {
+    display: flex;
+}
 ul#topmenu li {
-    float: left;
     margin: 0;
     padding: 0;
-    vertical-align: middle
+    vertical-align: middle;
+    position: relative;
+    width: 100px;
 }
 .li_switch_dbstats {
     list-style: none;
@@ -1947,13 +1948,9 @@ ul#topmenu2 a:hover, ul#topmenu2 li.active a {
 ul#topmenu2 li.active a:after {
     opacity: 1;
 }
-
-#topmenu li {
-    width: 100px;
-}
 #topmenu a {
     display: block;
-    width: 99px;
+    width: 100px;
     margin: 0;
     border:0;
     text-align: center;
@@ -1965,7 +1962,23 @@ ul#topmenu2 li.active a:after {
     color:#B9B9B9;
     font-weight: 700;
     font-size: 10px;
+    position: relative;
 }
+#topmenu li:nth-child(15) { z-index:1; }
+#topmenu li:nth-child(14) { z-index:2; }
+#topmenu li:nth-child(13) { z-index:3; }
+#topmenu li:nth-child(12) { z-index:4; }
+#topmenu li:nth-child(11) { z-index:5; }
+#topmenu li:nth-child(10) { z-index:6; }
+#topmenu li:nth-child(9) { z-index:7; }
+#topmenu li:nth-child(8) { z-index:8; }
+#topmenu li:nth-child(7) { z-index:9; }
+#topmenu li:nth-child(6) { z-index:10; }
+#topmenu li:nth-child(5) { z-index:11; }
+#topmenu li:nth-child(4) { z-index:12; }
+#topmenu li:nth-child(3) { z-index:13; }
+#topmenu li:nth-child(2) { z-index:14; }
+#topmenu li:nth-child(1) { z-index:15; }
 #topmenu a img {
     display: block;
     width: 32px;
@@ -2032,8 +2045,69 @@ ul#topmenu2 a.tabactive {
 }
 
 ul#topmenu>li.active {
-
+    z-index: 20;
 }
+ul#topmenu>li.active a {
+    color:#000
+}
+#topmenu .active .ic_s_db {
+    background:url('../img/g/db.svg') no-repeat center / contain;
+}
+#topmenu .active .ic_b_sql {
+    background:url('../img/g/sql.svg') no-repeat center / contain;
+}
+#topmenu .active .ic_s_status {
+    background:url('../img/g/status.svg') no-repeat center / contain;
+}
+#topmenu .active .ic_s_rights {
+    background:url('../img/g/user.svg') no-repeat center / contain;
+}
+#topmenu .active .ic_b_export {
+    background:url('../img/g/export.svg') no-repeat center / contain;
+}
+#topmenu .active .ic_b_import {
+    background:url('../img/g/import.svg') no-repeat center / contain;
+}
+#topmenu .active .ic_b_tblops {
+    background:url('../img/g/settings.svg') no-repeat center / contain;
+}
+#topmenu .active .ic_s_replication {
+    background:url('../img/g/rep.svg') no-repeat center / contain;
+}
+#topmenu .active>a>.ic_s_vars {
+    background:url('../img/g/var.svg') no-repeat center / contain;
+}
+#topmenu .active>a>.ic_s_asci {
+    background:url('../img/g/charset.svg') no-repeat center / contain;
+}
+#topmenu .active>a>.ic_b_engine {
+    background:url('../img/g/eng.svg') no-repeat center / contain;
+}
+#topmenu .active>a>.ic_b_plugin {
+    background:url('../img/g/plugin.svg') no-repeat center / contain;
+}
+#topmenu .active>a>.ic_b_props {
+    background:url('../img/g/table.svg') no-repeat center / contain;
+}
+#topmenu .active>a>.ic_b_search {
+    background:url('../img/g/search.svg') no-repeat center / contain;
+}
+#topmenu .active>a>.ic_b_routines {
+    background:url('../img/g/timer.svg') no-repeat center / contain;
+}
+#topmenu .active>a>.ic_b_events {
+    background:url('../img/g/event.svg') no-repeat center / contain;
+}
+#topmenu .active>a>.ic_b_triggers {
+    background:url('../img/g/trigger.svg') no-repeat center / contain;
+}
+#topmenu .active>a>.ic_b_relations {
+    background:url('../img/g/relations.svg') no-repeat center / contain;
+}
+#topmenu .active>a>.ic_b_browse {
+    background:url('../img/g/browse.svg') no-repeat center / contain;
+}
+
 
 div#dataDisplay input,
 div#dataDisplay select {
@@ -2510,6 +2584,10 @@ div#queryboxcontainer div#bookmarkoptions {
     flex:0 0 calc(50% - 20px);
     max-width:50%;
 }
+#maincontainer .ic_b_help {
+    width: 14px;
+    height: 14px;
+}
 
 #mysqlmaininformation,
 #pmamaininformation {
@@ -2523,9 +2601,14 @@ div#queryboxcontainer div#bookmarkoptions {
 }
 
 #maincontainer li {
-    margin: .2em 0
+    margin: 6px 0 12px;
 }
-
+#maincontainer li:last-child {
+    margin: 6px 0 0;
+}
+#maincontainer .icon {
+    margin-right: 8px;
+}
 #full_name_layer {
     position: absolute;
     padding: 2px;
@@ -2560,7 +2643,7 @@ div#queryboxcontainer div#bookmarkoptions {
 
 #selflink {
     clear: both;
-    display: none;
+    display: none !important;
 }
 
 #table_innodb_bufferpool_usage,
@@ -2664,11 +2747,15 @@ div.sqlvalidate {
 }
 .group h2 {
     background: #00A99D;
-    padding:8px 20px;
+    padding:10px 15px;
     border-radius: 8px 8px 0 0;
     color:#fff;
     cursor:default;
     margin:-10px -10px 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+    font-size: 15px;
 }
 .group ul {
     display: block;
@@ -3022,8 +3109,9 @@ table#index_columns select {
     list-style: none;
     font-weight: bold;
     display: flex;
-    margin: 0 0 15px;
+    margin: 0;
     align-items: flex-end;
+    border-bottom: 1px solid #ddd;
 }
 .config-form ul.tabs+br {
     display: none;
@@ -3040,12 +3128,15 @@ table#index_columns select {
     background-color: #e5e5e5;
     transition:.6s;
     margin-top: 4px;
+    border:1px solid transparent;
+    border-bottom: 0;
 }
 .config-form ul.tabs li.active a {
     border-radius:8px 8px 0 0;
     padding:10px 15px;
     background:#fff;
-    box-shadow:0 -5px 10px rgba(0,0,0,.1);
+    border:1px solid #ddd;
+    border-bottom: 0;
     margin-top: 0;
 }
 
@@ -3066,15 +3157,22 @@ table#index_columns select {
     padding: 0;
     clear: both
 }
+.ui-dialog .config-form fieldset {
 
+}
+.ui-dialog .config-form fieldset table {
+    margin: 0;
+}
 .config-form legend {
     display: none
 }
 
 .config-form fieldset p {
     margin: 0;
-    padding: .5em;
-    background: #d5d5d5
+    padding: 10px;
+    font-weight: normal;
+    font-size:14px;
+    background: #fff;
 }
 
 .config-form fieldset .errors {
@@ -3173,9 +3271,7 @@ fieldset .disabled-field td {
 }
 
 .config-form .lastrow {
-    border-top: 1px #000 solid;
-    background: #d3dce3;
-    padding: .5em;
+    padding:10px;
     text-align: center
 }
 
@@ -3186,10 +3282,6 @@ fieldset .disabled-field td {
 .config-form span.checkbox {
     padding: 2px;
     display: inline-block
-}
-
-.config-form .custom {
-    background: #ffc
 }
 
 .config-form span.checkbox.custom {
@@ -3215,22 +3307,9 @@ fieldset .disabled-field td {
     height: auto
 }
 
-.config-form input[type=text]:focus,
-.config-form input[type=password]:focus,
-.config-form input[type=number]:focus {
-    border: 1px #6676ff solid;
-    background: #f7fbff
-}
-
-.config-form select:focus,
-.config-form textarea:focus {
-    border: 1px #6676ff solid;
-    background: #f7fbff
-}
-
 .config-form .field-comment-mark {
     font-family: serif;
-    color: #007;
+    color: #000;
     cursor: help;
     padding: 0 .2em;
     font-weight: bold;
@@ -3238,7 +3317,7 @@ fieldset .disabled-field td {
 }
 
 .config-form .field-comment-warning {
-    color: #a00
+    color: firebrick;
 }
 
 .config-form dd {
@@ -3777,7 +3856,10 @@ table.show_create td {
 }
 
 .ui-dialog {
-    position: fixed
+    position: fixed;
+}
+#pma_navigation_settings {
+    padding: 15px;
 }
 
 .small_font {
@@ -4778,7 +4860,9 @@ a.close_gis_editor {
     flex:0 0 30px;
     padding: 5px;
 }
-
+#pma_navigation div.pageselector select {
+    background-color:transparent !important;
+}
 #pma_navigation div#pmalogo {
     margin: 0;
     padding: 0;
@@ -4810,7 +4894,7 @@ a.close_gis_editor {
 #navipanellinks {
     margin:20px;
     border-radius:10px;
-    box-shadow:0 5px 35px rgba(0,0,0,.1);
+    box-shadow:0 0 15px rgba(0,0,0,.2);
     display: flex;
     padding:12px 8px !important;
     position: relative;
@@ -4899,31 +4983,40 @@ a.close_gis_editor {
 }
 
 #pma_navigation_tree_content {
-    width:calc(100% - 40px);
-    overflow: hidden;
-    overflow-y: auto;
+    width:calc(100% - 30px);
     position: absolute;
     height: 100%;
-    margin:0 20px;
+    margin:0 10px 0 20px;
+    padding-right: 10px;
+    overflow-y:auto;
 }
-
 #pma_navigation_tree_content a.hover_show_full {
     position: relative;
     z-index: 100;
 }
 
 #pma_navigation_tree a {
-    color: #9D9D9D;
+    color: #000;
     padding-left: 0;
     height: auto;
     line-height:normal;
+    font-weight: lighter;
 }
 #pma_navigation_tree .icon {
     width: 18px;
     height: 18px;
 }
 #pma_navigation_tree .ic_s_db {
+    background:url("../img/db_b.svg") no-repeat center / contain
+}
+#pma_navigation_tree .ic_b_newdb {
+    background:url("../img/db_add_b.svg") no-repeat center / contain
+}
+#pma_navigation_tree .list_container .ic_s_db {
     background:url("../img/db.svg") no-repeat center / contain
+}
+#pma_navigation_tree .ic_b_group {
+    background:url("../img/folder_b.svg") no-repeat center / contain
 }
 #pma_navigation_tree .ic_b_props {
     background: url("../img/table.svg") no-repeat center / contain;
@@ -4936,39 +5029,30 @@ a.close_gis_editor {
 #pma_navigation_tree li {
     margin-bottom: 0
 }
-#pma_navigation_tree_content > ul > li > a {
+#pma_navigation_tree_content > ul > li > a, #pma_navigation_tree_content > ul > li.navGroup > i  {
     display: inline-block;
     vertical-align: middle;
     font-size: 15px;
-    padding:12px;
+    padding:12px 8px;
     position: relative;
-    margin-right:25px;
     overflow: hidden;
     font-weight: lighter;
+    max-width:calc(100% - 50px);
+    letter-spacing: 0.5px;
 }
-#pma_navigation_tree_content > ul > li > a:before {
-    content:'';
-    position: absolute;
-    left: 5px;
-    height: 22px;
-    width: 22px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-#pma_navigation_tree li > a[title="New"]:before {
-    //background:url('../img/db_add.svg') no-repeat center / contain;
-}
-#pma_navigation_tree li > a[title="Structure"]:before {
-    //background:url('../img/db.svg') no-repeat center / contain;
+#pma_navigation_tree_content > ul > li.navGroup > i {
+    display: flex;
 }
 #pma_navigation_tree .list_container li > a {
     font-size: 14px;
     padding:4px 12px;
-    color:#B9B9B9;
+    color: #4f4f4f;
     display: inline-block;
     vertical-align: middle;
     max-width:calc(100% - 30px);
     overflow:hidden;
+    font-weight: lighter;
+    letter-spacing: 0.5px;
 }
 
 #pma_navigation_tree li .dbItemControls {
@@ -5018,10 +5102,6 @@ a.close_gis_editor {
     margin: 0
 }
 
-#pma_navigation_tree i {
-
-}
-
 #pma_navigation_tree div.block:nth-child(1) {
     //display: none;
 }
@@ -5031,11 +5111,14 @@ a.close_gis_editor {
     position: absolute;
     text-align: right;
 }
-#pma_navigation_tree_content > ul > li > .block > a img {
+#pma_navigation_tree_content > ul > li > .block > a img, #pma_navigation_tree_content > ul > li.navGroup > i .block img {
     width: 22px;
     height: 22px;
     z-index:99;
     margin:10px 0 10px auto;
+}
+#pma_navigation_tree_content > ul > li.navGroup > i .block img {
+    margin: 0 5px 0 -5px;
 }
 .ic_b_plus {
     background:url('../img/plus.svg') no-repeat center / contain;
@@ -5064,6 +5147,7 @@ a.close_gis_editor {
 }
 #pma_navigation_tree i {
     display: flex;
+    align-items: center;
 }
 
 #pma_navigation_tree div.block i.first {
@@ -5094,13 +5178,17 @@ a.close_gis_editor {
 #pma_navigation_tree .list_container {
     padding:0 0 10px 5px;
 }
+#pma_navigation_tree .list_container .list_container {
+    padding:5px 0 10px 5px;
+}
 #pma_navigation_tree .list_container li:before {
     content:'';
     position: absolute;
 }
 
-#pma_navigation_tree .last>.list_container {
-
+#pma_navigation_tree .list_container img[title="Expand/Collapse"] {
+    width: 15px;
+    height: 15px;
 }
 
 li.fast_filter {
@@ -5109,7 +5197,7 @@ li.fast_filter .searchClause {
     border:1px solid #DBDBDB;
     border-radius:10px;
     outline:0;
-    padding:8px 30px;
+    padding:10px 30px;
     background:#fff url('../img/search.svg') no-repeat 8px center / 15px;
 }
 li.fast_filter input {
@@ -6227,7 +6315,7 @@ ul.resizable-menu ul li {
 }
 
 .ic_b_column_add {
-    background-image: url("../img/b_column_add.png")
+    background: url("../img/col_add.svg") no-repeat center / contain;
 }
 
 .ic_b_comment {
@@ -6301,13 +6389,13 @@ ul.resizable-menu ul li {
 }
 
 .ic_b_group {
-    background-image: url("../img/b_group.png")
+    background: url("../img/folder.svg") no-repeat center / contain;
 }
 
 .ic_b_help {
     background: url("../img/s/help.svg") no-repeat center / contain;
 }
-th .ic_b_help {
+thead .ic_b_help {
     background: url("../img/help.svg") no-repeat center / contain;
 }
 
@@ -6320,7 +6408,7 @@ th .ic_b_help {
 }
 
 .ic_b_index {
-    background-image: url("../img/b_index.png")
+    background: url("../img/index.svg") no-repeat center / contain;
 }
 
 .ic_b_index_add {
@@ -6384,7 +6472,7 @@ th .ic_b_help {
 }
 
 .ic_b_primary {
-    background-image: url("../img/b_primary.png")
+    background:url('../img/key.svg') no-repeat center / contain;
 }
 
 .ic_b_print {
@@ -6719,7 +6807,7 @@ th .ic_b_help {
 }
 
 .ic_pause {
-    background-image: url("../img/pause.png")
+    background: url("../img/col.svg") no-repeat center / contain;
 }
 
 .ic_php_sym {
@@ -6884,9 +6972,9 @@ th .ic_b_help {
     background-image: url("../img/s_fulltext.png")
 }
 
-::-webkit-scrollbar { width:5px; height:5px; }
-
 ::-webkit-scrollbar {
+    width:5px;
+    height:5px;
     background: rgba(255, 255, 255, 0.05);
     display: block;
     padding: 2px;
