@@ -1,7 +1,11 @@
 # AIO - phpMyAdmin Theme
 A brilliantly coded AIO (All-In-One) Theme for phpMyAdmin
 
+Preview
 ![AIOphpMyAdmin Theme](https://raw.githubusercontent.com/AIOFrame/phpMyAdmin/main/screen-2x.jpg)
+
+Dark Mode Preview
+![AIOphpMyAdmin Theme](https://raw.githubusercontent.com/AIOFrame/phpMyAdmin/main/screen-dark-2x.jpg)
 
 
 ### General Instructions
@@ -26,7 +30,10 @@ Version 1.1 - 2 Feb 2021
 - Added new icons (grouped icon)
 - Improved input and select UI
 
+Version 1.2 - 5 Feb 2021
+- Dark Mode
+- Icon Fixes for Dark Mode
+
 ### What's next?
 
-1. More Fixes
-2. Dark Mode (Can't work until we have a stable UI)
+1. Shoot your requests to shaikh@aioframe.com
