@@ -1610,7 +1610,7 @@ div.error h1 {
 
 div.success, div.notice, div.error {
     margin:20px 0;
-    border: 1px solid;
+    border: 1px solid #ddd;
     background-repeat: no-repeat;
     border-radius:10px;
     clear: both;
@@ -1628,17 +1628,6 @@ div.error img.icon {
     position: absolute;
     left: 10px;
     top: 10px;
-}
-
-.success {
-    color: #000;
-    background-color: #f0fff0
-}
-
-h1.success,
-div.success,
-.success h1 {
-    border-color: lime
 }
 
 .notice {
@@ -1941,6 +1930,9 @@ ul#topmenu2 a:after {
     background:#000;
     opacity: 0;
     transition:1s;
+}
+ul#topmenu2 a.tabactive:after {
+    opacity: 1;
 }
 ul#topmenu2 a:hover, ul#topmenu2 li.active a {
     text-decoration: none;
@@ -3264,7 +3256,9 @@ fieldset .disabled-field th small {
     color: #666;
     background-color: #ddd
 }
-
+fieldset li {
+    list-style:none;
+}
 fieldset .disabled-field td {
     color: #666;
     background-color: #ddd
@@ -3282,12 +3276,6 @@ fieldset .disabled-field td {
 .config-form span.checkbox {
     padding: 2px;
     display: inline-block
-}
-
-.config-form span.checkbox.custom {
-    padding: 1px;
-    border: 1px #edec90 solid;
-    background: #ffc
 }
 
 .config-form .field-error {
@@ -3651,7 +3639,6 @@ input#auto_increment_opt {
 }
 
 .navigation {
-    background: #e5e5e5;
     border: 1px solid #000;
     margin: .8em 0
 }
@@ -6985,6 +6972,107 @@ thead .ic_b_help {
     margin-left: 1px;
     border-radius: 2px;
     background: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background:rgb(20,20,20);
+        color:#fff;
+    }
+    a, ul#topmenu2 a {
+        color:#fff
+    }
+    #pma_navigation, #topmenucontainer, #topmenu a, #pma_navigation_collapser, .group, table tbody, fieldset {
+        background-color:rgb(40,40,40);
+    }
+    table tbody tr, .config-form fieldset td, .config-form fieldset th {
+        border-bottom:1px solid rgb(70,70,70);
+    }
+    table tr:not(.nopointer):hover, .notice {
+        background:#324645;
+        color:#fff;
+    }
+    table tr.marked:not(.nomarker) td, table tr.marked:not(.nomarker) th, .config-form ul.tabs li a, .ui-widget-content {
+        background:rgb(50,50,50);
+        color:#fff;
+    }
+    .config-form ul.tabs li a {
+        border:0;
+    }
+    div.success, div.notice, div.error {
+        border:1px solid #4f4f4f;
+    }
+    .group {
+        //background:rgb(50,50,50);
+    }
+    #navipanellinks, div.tools, .tblFooters {
+        background:rgb(60,60,60);
+    }
+    #pma_console .toolbar, #pma_console .switch_button:hover {
+        background:rgb(30,30,30);
+        border:0;
+    }
+    #pma_console .content {
+        background:#3b3b3b;
+        border-top:solid 1px #626262
+    }
+    .CodeMirror {
+        background:#545454;
+        color:#fff;
+    }
+    .CodeMirror-gutters {
+        background:#464646;
+        border-right: 1px solid #737373;
+    }
+    #topmenu a {
+        box-shadow:0 0 35px rgba(0,0,0,.5);
+    }
+    .config-form ul.tabs {
+        border-bottom:1px solid #898989;
+    }
+    .config-form fieldset td, .config-form fieldset th {
+        border-top:0;
+    }
+    ul#topmenu>li.active a, .config-form fieldset p, .config-form ul.tabs li.active a, .btn-secondary, fieldset > legend {
+        color:#fff;
+        background-color:rgb(65,65,65);
+    }
+    .result_query div.sqlOuter, div.sqlvalidate {
+        background:#000;
+    }
+    .config-form ul.tabs li.active a {
+        background-color:rgb(70,70,70);
+        border:0;
+    }
+    .config-form fieldset th small {
+        color:#818181;
+    }
+    #pma_navigation_tree li, #pma_navigation_tree a {
+        color:#fff;
+    }
+    ul#topmenu2 a:after {
+        background:#fff;
+    }
+    input[type=text], input[type=number], select, .config-form select, .config-form textarea, .config-form input[type=text], .config-form input[type=password], .config-form input[type=number] {
+        background-color:rgb(50,50,50);
+        border:1px solid #646464;
+        color:#fff;
+    }
+    input[type=checkbox], input[type=radio] {
+        background: #525252;
+    }
+    #pma_navigation_tree .list_container li > a {
+        color:#989898;
+    }
+    #pma_navigation_tree .ic_s_db {
+        background: url("../img/db_w.svg") no-repeat center / contain;
+    }
+    #pma_navigation_tree .ic_b_newdb {
+        background: url("../img/db_add_w.svg") no-repeat center / contain;
+    }
+    #pma_navigation_tree .ic_b_group {
+        background: url("../img/folder_w.svg") no-repeat center / contain;
+    }
 }
 
 /*# sourceMappingURL=theme.css.map */
