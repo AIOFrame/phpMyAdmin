@@ -7061,6 +7061,9 @@ thead .ic_b_help {
     input[type=checkbox], input[type=radio] {
         background: #525252;
     }
+    #pmalogo a {
+        background:url('../img/logo_left_w.svg') no-repeat left center / contain
+    }
     #pma_navigation_tree .list_container li > a {
         color:#989898;
     }
