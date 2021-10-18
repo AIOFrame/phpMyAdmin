@@ -66,10 +66,11 @@ section {
 }
 
 body {
-    margin: 0;
+    padding-top: 0 !important;
     font-size: 1rem;
     font-weight: 500;
     color: #212529;
+    background: #f5f5f5
 }
 
 [tabindex="-1"]:focus {
@@ -218,6 +219,9 @@ table {
     margin-bottom: 15px;
     width: 100%;
 }
+table[db_url] {
+    width: auto;
+}
 table th, table td {
     padding:10px 4px;
     font-weight: normal;
@@ -257,7 +261,10 @@ caption {
 
 label {
     display: inline-block;
-    margin-bottom: .5rem
+    vertical-align: middle;
+    margin-bottom: .5rem;
+    font-weight: normal;
+    cursor: pointer;
 }
 
 button {
@@ -289,12 +296,22 @@ button,
 select {
     text-transform: none
 }
-input[type=text], input[type=number] {
+input[type=text], input[type=number], input[type=password], textarea {
     font-size: 13px;
     padding:8px;
     border-radius:6px;
-    border:1px solid #ddd;
+    border:2px solid #ddd;
     outline: 0;
+    transition:.6s;
+    color:#000;
+    font-weight: normal;
+}
+input[type=text][disabled], input[type=number][disabled], input[type=password][disabled], textarea[disabled] {
+    background:#ddd;
+    cursor:not-allowed;
+}
+input[type=text]:focus, input[type=number]:focus, input[type=password]:focus, textarea:focus {
+    border:2px solid #00a89c;
 }
 input[type=checkbox], input[type=radio] {
     appearance: none;
@@ -302,49 +319,53 @@ input[type=checkbox], input[type=radio] {
     width: 18px;
     height: 18px;
     border-radius:4px;
-    background:#ddd;
+    background:#fff;
+    border:2px solid #ddd;
     outline:none;
     cursor:pointer;
     margin-right:5px;
     vertical-align: middle;
     position: relative;
-    border:1px solid transparent;
 }
 input[type=radio] {
     border-radius:10px;
 }
 input[type=checkbox]:checked, input[type=radio]:checked {
-    border:1px solid #00a89c;
+    border:2px solid #00a89c;
 }
 input[type=checkbox]:checked:after, input[type=radio]:checked:after {
     content:'';
     background:#00a89c;
     position: absolute;
-    left: 2px;
-    top: 2px;
-    width: 12px;
-    height: 12px;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 14px;
     border-radius:2px;
+}
+legend input[type=checkbox]:checked, legend input[type=radio]:checked {
+    border:2px solid #fff;
 }
 input[type=radio]:checked:after {
     border-radius:10px;
-}
-label {
-    cursor:pointer;
 }
 select {
     word-wrap: normal;
     font-size: 13px;
     padding:8px 30px 8px 8px;
     border-radius:6px;
-    border:1px solid #ddd;
+    border:2px solid #ddd;
     outline: 0;
     cursor:pointer;
     appearance: none;
     -webkit-appearance: none;
+    color:#000;
+    font-weight: normal;
     background:#fff url("../img/n/select.svg") no-repeat calc(100% - 6px) / 15px;
 }
-
+select:focus {
+    border:2px solid #00a89c;
+}
 button,
 [type=button],
 [type=reset],
@@ -488,7 +509,7 @@ fieldset:disabled a.btn {
 .btn-primary:hover {
     color: #fff;
     background-color: #00a89c;
-    transform:translateY(-3px);
+    transform:translateY(-1px);
 }
 
 .btn-primary:focus,
@@ -531,7 +552,10 @@ fieldset:disabled a.btn {
     box-shadow: 0 0 0 .2rem rgba(130, 138, 145, .5)
 }
 
-.tblFooters .btn-primary, .tblFooters .btn-secondary {
+.tblFooters .btn-primary, .tblFooters .btn-secondary,
+.card-footer .btn-primary, .card-footer .btn-secondary,
+.importoptions.justify-content-end .btn-primary, .exportoptions.justify-content-end .btn-primary
+{
     background:#fff;
     color:#000;
     text-transform: uppercase;
@@ -1103,6 +1127,39 @@ input[type=reset].btn-block,
 input[type=button].btn-block {
     width: 100%
 }
+#user_prefs_tabs, .nav-pills {
+    display: flex;
+    margin:0 -10px;
+    margin-bottom: 20px;
+}
+#user_prefs_tabs li, .nav-pills li {
+    list-style: none;
+}
+#user_prefs_tabs a, .nav-pills a {
+    padding:12px 10px;
+    color:#000;
+    display: block;
+    position: relative;
+    font-size: 1rem;
+    font-weight: normal;
+}
+#user_prefs_tabs a span {
+    font-weight: normal;
+    font-size: 1rem;
+}
+#user_prefs_tabs a.active:after, .nav-pills a.active:after {
+    content:'';
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 2px;
+    background:#000;
+    display: block;
+    bottom: 0;
+    position: absolute;
+}
+.form-inline {
+    display: flex;
+}
 
 @media print {
     *,
@@ -1187,15 +1244,16 @@ html {
     font-size: 82%
 }
 
-body {
-    background: #f5f5f5
-}
-
 #page_content {
     padding: 20px;
-    margin-top: 85px;
+    margin-top: 120px !important;
 }
-
+.alert {
+    margin-bottom: 20px;
+    background: rgba(0, 168, 156, 0.2);
+    padding: 15px;
+    border-radius:10px;
+}
 .desktop50 {
     width: 50%
 }
@@ -1298,14 +1356,39 @@ th.fillPage {
 textarea.charField {
     width: 95%
 }
-
-fieldset {
-    border: 0;
+.card {
+    margin-top: 40px;
+    position: relative;
+}
+fieldset, .importoptions:not(#header):not(#submit), .exportoptions:not(#header):not(#submit), .card-body {
     padding:10px;
     margin: 0 0 20px;
     min-width:0;
-    background: #e5e5e5;
+    background:#fff;
+    border:2px solid #e5e5e5;
     border-radius:10px;
+    box-shadow:0 5px 25px rgba(0,0,0,.1);
+    transition:1s;
+    position: relative;
+}
+.importoptions:not(#header):not(#submit), .exportoptions:not(#header):not(#submit), .card-body {
+    padding-top: 30px;
+    margin-bottom: 40px;
+}
+.card-body {
+    padding-top: 30px;
+}
+fieldset:hover {
+    //border:2px solid #00a89c;
+}
+fieldset .item {
+    margin:0 0 10px;
+}
+fieldset .item:last-child {
+    margin: 0;
+}
+#fieldset_add_user_footer {
+    border:0;
 }
 fieldset:not(.tblFooters) {
     //border-radius: 10px 10px 0 0;
@@ -1321,11 +1404,11 @@ fieldset fieldset {
     margin: .8em
 }
 
-fieldset > legend {
-    background:#fff;
+fieldset > legend, .importoptions h3, .exportoptions h3, .card-header {
+    background:#00a89c;
     font-weight: bold;
-    color: #000;
-    padding: 10px;
+    color: #fff;
+    padding: 10px 15px;
     box-shadow:0 0 15px rgba(0,0,0,.1);
     width: initial;
     font-size: 1rem;
@@ -1333,8 +1416,21 @@ fieldset > legend {
     border-radius:6px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    display: inline-block;
 }
-
+.importoptions h2, .exportoptions h2 {
+    margin-bottom: 40px;
+}
+.importoptions h3, .exportoptions h3, .card-header {
+    position: absolute;
+    left: 15px;
+    top: -20px;
+    padding: 10px 15px;
+    z-index:10;
+}
+fieldset > legend > label {
+    margin: 0;
+}
 
 .some-margin {
     margin: .5em;
@@ -1420,15 +1516,25 @@ div.tools {
     clear: both
 }
 
-fieldset.tblFooters {
+fieldset.tblFooters, .importoptions.justify-content-end, .exportoptions.justify-content-end, .card-footer {
     text-align: right;
     float: none;
     clear: both;
     background:#00a89c;
     border-radius:10px;
     color:#fff;
+    box-shadow:none;
+    padding: 10px;
 }
+.card-footer {
+    margin-bottom: 40px;
+}
+.card-footer:last-child {
+    margin: 0;
+}
+.importoptions.justify-content-end, .exportoptions.justify-content-end {
 
+}
 div.null_div {
     height: 20px;
     text-align: center;
@@ -1471,12 +1577,7 @@ table tr.marked:not(.nomarker) {
 
 table tr.marked:not(.nomarker) td,
 table tr.marked:not(.nomarker) th {
-    background: #e4e4e4;
-    color: #000
-}
-
-table tr:not(.nopointer):hover {
-    background: #d9eeed;
+    background: #f4f4f4;
     color: #000
 }
 
@@ -1870,7 +1971,16 @@ form.login label {
 li.last.database {
     margin-bottom: 20px !important
 }
+#server-breadcrumb {
+    background:rgba(255,255,255,.9);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+#server-breadcrumb a {
+    display: inline-block;
+    padding: 10px;
 
+}
 #topmenucontainer {
     background: #fff;
     width: 100%;
@@ -1879,7 +1989,9 @@ li.last.database {
     left: 0;
     top: 35px;
 }
-
+.navbar-toggler {
+    display: none;
+}
 ul#topmenu,
 ul#topmenu2,
 ul.tabs {
@@ -1901,6 +2013,10 @@ ul#topmenu li {
     vertical-align: middle;
     position: relative;
     width: 100px;
+    list-style:none;
+}
+ul#topmenu li.dropdown:not(.show) ul {
+    display: none;
 }
 .li_switch_dbstats {
     list-style: none;
@@ -1955,6 +2071,9 @@ ul#topmenu2 li.active a:after {
     font-weight: 700;
     font-size: 10px;
     position: relative;
+}
+#topmenu a .sr-only {
+    display:none;
 }
 #topmenu li:nth-child(15) { z-index:1; }
 #topmenu li:nth-child(14) { z-index:2; }
@@ -2246,13 +2365,17 @@ div#tablestatistics table {
 }
 
 #fieldset_add_user_login div.item {
-    border-bottom: 1px solid silver;
-    padding-bottom: .3em;
-    margin-bottom: .3em
+    border-bottom: 1px solid #ddd;
+    padding: .5em 5px;
+    margin-bottom: .3em;
+    display: flex;
+    align-items: center;
 }
-
+#fieldset_add_user_login div.item:last-child {
+    border: 0;
+}
 #fieldset_add_user_login label {
-    float: left;
+    //float: left;
     display: block;
     width: 15em;
     max-width: 100%;
@@ -2892,13 +3015,6 @@ select.invalid_value,
     border-bottom: 1px #999 solid;
     font-size: 110%
 }
-
-.importoptions h3 {
-    border-bottom: 1px solid #ddd;
-    font-size: 110%;
-    padding:12px 0;
-}
-
 .exportoptions ul,
 .importoptions ul,
 .format_specific_options ul {
@@ -2925,11 +3041,6 @@ select.invalid_value,
 #output label.desc {
     float: left;
     width: 15em
-}
-
-.exportoptions,
-.importoptions {
-    margin: 20px 30px 30px 10px
 }
 
 .format_specific_options {
@@ -3187,7 +3298,7 @@ table#index_columns select {
 }
 
 .config-form fieldset th {
-    padding: .3em .3em .3em .5em;
+    padding: 10px;
     text-align: left;
     vertical-align: top;
     width: 40%;
@@ -3207,12 +3318,13 @@ table#index_columns select {
 }
 
 .config-form fieldset td {
-    padding-top: .3em;
-    padding-bottom: .3em;
+    padding: 10px;
     vertical-align: top;
     border-top: 1px solid #d5d5d5
 }
-
+.config-form fieldset tr:last-child {
+    border: 0;
+}
 .config-form fieldset th {
     border-top: 1px solid #d5d5d5
 }
@@ -3231,11 +3343,6 @@ fieldset .group-header th {
 
 fieldset .group-header+tr th {
     padding-top: .6em
-}
-
-fieldset .group-field-1 th,
-fieldset .group-header-2 th {
-    padding-left: 1.5em
 }
 
 fieldset .group-field-2 th,
@@ -3280,19 +3387,6 @@ fieldset .disabled-field td {
 
 .config-form .field-error {
     border-color: #a11 !important
-}
-
-.config-form input[type=text],
-.config-form input[type=password],
-.config-form input[type=number] {
-    border: 1px #a7a6aa solid;
-    height: auto
-}
-
-.config-form select,
-.config-form textarea {
-    border: 1px #a7a6aa solid;
-    height: auto
 }
 
 .config-form .field-comment-mark {
@@ -4901,7 +4995,9 @@ a.close_gis_editor {
     margin:10px auto;
     width:30px;
 }
-
+.text-center {
+    text-align: center;
+}
 #pma_navigation #pmalogo,
 #pma_navigation #serverChoice,
 #pma_navigation #navipanellinks,
@@ -5023,7 +5119,7 @@ a.close_gis_editor {
     padding:12px 8px;
     position: relative;
     overflow: hidden;
-    font-weight: lighter;
+    font-weight: normal;
     max-width:calc(100% - 50px);
     letter-spacing: 0.5px;
 }
@@ -5038,7 +5134,7 @@ a.close_gis_editor {
     vertical-align: middle;
     max-width:calc(100% - 30px);
     overflow:hidden;
-    font-weight: lighter;
+    font-weight: normal;
     letter-spacing: 0.5px;
 }
 
@@ -5181,7 +5277,8 @@ a.close_gis_editor {
 li.fast_filter {
 }
 li.fast_filter .searchClause {
-    border:1px solid #DBDBDB;
+    border:2px solid #DBDBDB;
+    font-weight: normal;
     border-radius:10px;
     outline:0;
     padding:10px 30px;
@@ -5368,14 +5465,17 @@ canvas.designer * {
     background-color: #fff;
     color: #000;
     border-collapse: collapse;
-    border: 1px solid #aaa;
+    border: 2px solid #00a89c;
     z-index: 1;
-    -moz-user-select: none
+    -moz-user-select: none;
+    box-shadow:0 5px 25px rgba(0,0,0,.15)
 }
 
 .designer_tab .header {
     background-image: url("../img/designer/Header.png");
-    background-repeat: repeat-x
+    background-repeat: repeat-x;
+    background-color:#00a89c;
+    color:#fff;
 }
 
 .tab_zag {
@@ -5468,7 +5568,7 @@ canvas.designer * {
 
 .owner {
     font-weight: normal;
-    color: #888
+    color: #ddd
 }
 
 .option_tab {
@@ -5490,27 +5590,13 @@ canvas.designer * {
 
 .small_tab {
     vertical-align: top;
-    background-color: #0064ea;
+    background-color: #00a89c;
     color: #fff;
     background-image: url("../img/designer/small_tab.png");
-    cursor: default;
+    cursor: pointer;
     text-align: center;
     font-weight: bold;
-    padding-left: 2px;
-    padding-right: 2px;
-    width: 1px;
-    text-decoration: none
-}
-
-.small_tab:hover {
-    vertical-align: top;
-    color: #fff;
-    background-color: #f96;
-    cursor: default;
-    padding-left: 2px;
-    padding-right: 2px;
-    text-align: center;
-    font-weight: bold;
+    padding:10px;
     width: 1px;
     text-decoration: none
 }

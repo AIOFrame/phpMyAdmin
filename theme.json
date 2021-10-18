@@ -1,8 +1,8 @@
 {
     "name": "AIO",
-    "version": "5.0",
+    "version": "5.1",
     "description": "A new interface for lovely phpMyAdmin",
     "author": "Shaikh",
     "url": "https://www.shaikh.dev/",
-    "supports": ["5.0"]
+    "supports": ["5.1"]
 }
